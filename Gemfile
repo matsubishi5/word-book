@@ -68,3 +68,4 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'devise-i18n'

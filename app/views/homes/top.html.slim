@@ -1,4 +1,11 @@
 h1
-  | Homes#top
+  | Main Menu
 
-= link_to "新規ユーザー作成", new_user_registration_path
+p
+  | 下記のメニューよりクリックしてください。
+
+= link_to '新規ユーザー作成', new_user_registration_path
+= link_to '単語帳', learning_questions_path
+= link_to 'ランキング', users_ranking_path
+= link_to '単語マスタメンテナンス', questions_path
+= link_to "ログアウト", destroy_user_session_path, method: :delete

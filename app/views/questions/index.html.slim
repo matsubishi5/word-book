@@ -1,0 +1,45 @@
+.row
+  .col-xs-3
+  .col-xs-6
+
+    = form_with model: @question, url: questions_path(@question), local: true do |f|
+
+      = f.text_field :question, placeholder: '単語を入力してください', class: 'form-control'
+      br
+
+      = f.text_field :description, placeholder: '説明を入力してください', class: 'form-control'
+      br
+
+      = f.submit '登録', class: 'btn btn-success btn-block'
+      br
+
+  .col-xs-3
+
+.row
+  .table-responsive
+    table.table.table-bordered.table-hover
+      thead
+        tr.active
+          th.text-center
+            | ID
+          th.text-center
+            | 問題
+          th.text-center
+            | 説明
+          th
+          th
+
+      tbody
+        - @questions.each do |question|
+          tr
+            td.text-center
+              = question.id
+            td.text-center
+              = question.question
+            td.text-center
+              = question.description
+            td.text-center
+              = link_to '編集', edit_question_path(question), class: 'btn-sm btn-primary'
+            td.text-center
+              = link_to '削除', question_path(question), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn-sm btn-danger'
+
