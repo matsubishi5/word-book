@@ -4,11 +4,7 @@
 
     = form_with model: @question, url: question_path(@question), local: true do |f|
 
-      = f.text_field :question, placeholder: '単語を入力してください', class: 'form-control'
-      br
-
-      = f.text_field :description, placeholder: '説明を入力してください', class: 'form-control'
-      br
+      = render 'form', f: f
 
       = f.submit '保存', class: 'btn btn-success btn-block'
       br

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :questions, except: %i(show) do
     collection do
+      get :search
       get :learning
     end
   end

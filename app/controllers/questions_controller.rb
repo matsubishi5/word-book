@@ -28,6 +28,10 @@ class QuestionsController < ApplicationController
 		redirect_to questions_path
   end
 
+  def search
+    @questions = Question.search(params[:search])
+  end
+
 	private
 
 		def set_question
