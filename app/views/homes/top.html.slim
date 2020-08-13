@@ -1,11 +1,17 @@
-h1
-  | Main Menu
+.row
+  .col-xs-3
 
-p
-  | 下記のメニューよりクリックしてください。
+  .col-xs-6
+    .page-header
+      h3
+        | 単語帳アプリ
 
-= link_to '新規ユーザー作成', new_user_registration_path
-= link_to '単語帳', learning_questions_path
-= link_to 'ランキング', users_ranking_path
-= link_to '単語マスタメンテナンス', questions_path
-= link_to "ログアウト", destroy_user_session_path, method: :delete
+    = link_to '単語帳', learning_questions_path, class: 'btn btn-default btn-block'
+    br
+    = link_to 'ランキング', users_ranking_path, class: 'btn btn-default btn-block'
+    br
+    = link_to '単語メンテナンス', questions_path, class: 'btn btn-default btn-block'
+    br
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-default btn-block'
+
+  .col-xs-3

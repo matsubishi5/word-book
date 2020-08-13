@@ -1,7 +1,10 @@
 .row
-  .col-xs-3
-  .col-xs-6
+  .page-header
+    h3
+      | 単語メンテナンス
 
+.row
+  .col-xs-4
     = form_with model: @question, url: questions_path(@question), local: true do |f|
 
       = render 'form', f: f
@@ -9,13 +12,10 @@
       = f.submit '登録', class: 'btn btn-success btn-block'
       br
 
-  .col-xs-3
+    = link_to 'メニューへ戻る', root_path, class: 'btn btn-default'
 
-.row
-  = render 'search_form'
-
-.row
-  = render 'questions', questions: @questions
-
-.row
-  = link_to 'メニューへ戻る', root_path, class: 'btn btn-default'
+  .col-xs-8
+    .row
+      = render 'search_form'
+    .row
+      = render 'questions', questions: @questions
