@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/ranking'
   get 'questions/new'
   get 'questions/edit'
   root 'homes#top'
